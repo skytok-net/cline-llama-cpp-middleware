@@ -4,9 +4,9 @@ After=network.target
 
 [Service]
 User=paperspace
-WorkingDirectory=/Users/gqadonis/Projects/kokab/middleware
-ExecStartPre=/bin/bash -c 'source /Users/gqadonis/Projects/kokab/middleware/kokab-env/bin/activate && uv pip install -r /Users/gqadonis/Projects/kokab/middleware/requirements.txt'
-ExecStart=/Users/gqadonis/Projects/kokab/middleware/kokab-env/bin/python /Users/gqadonis/Projects/kokab/middleware/middleware.py
+WorkingDirectory=/usr/local/src/cline-llama-cpp-middleware
+ExecStartPre=/bin/bash -c 'source /usr/local/src/cline-llama-cpp-middleware/kokab-env/bin/activate && uv pip install -r /usr/local/src/cline-llama-cpp-middleware/requirements.txt'
+ExecStart=/usr/local/src/cline-llama-cpp-middleware/kokab-env/bin/python /usr/local/src/cline-llama-cpp-middleware/middleware.py
 Restart=always
 
 [Install]
