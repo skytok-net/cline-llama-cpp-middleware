@@ -1,0 +1,13 @@
+[Unit]
+Description=Kokab Middleware Service
+After=network.target
+
+[Service]
+User=paperspace
+WorkingDirectory=/Users/gqadonis/Projects/kokab/middleware
+ExecStartPre=/bin/bash -c 'source /Users/gqadonis/Projects/kokab/middleware/kokab-env/bin/activate && uv pip install -r /Users/gqadonis/Projects/kokab/middleware/requirements.txt'
+ExecStart=/Users/gqadonis/Projects/kokab/middleware/kokab-env/bin/python /Users/gqadonis/Projects/kokab/middleware/middleware.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
